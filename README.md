@@ -15,6 +15,7 @@ Current technologies in use:
 NOTE:  The heroku version of the web app uses a webhook, this hook will not
 communicate with your localhost.  The new spark code added with this commit
 no longer works with localhost either.
+
 1.  Setting up the virtual environment:
 	If you are using Mac OS X, type the following:
 	```
