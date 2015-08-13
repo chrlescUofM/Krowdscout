@@ -1,5 +1,5 @@
 # Krowdscout
-Every wondered how busy the gym was? What about your favorite restaurant, bar, or park?  Krowdscout is a platform that provides real time information about how busy your favorite places are, at the touch of a button.
+Every wondered how busy a place was before you there? Maybe your favorite restaurant, bar, or the park?  Krowdscout is a platform that provides real time information about how busy your favorite places are, at the touch of a button.
 
 This is a on-going project of mine that I have been working on in my free time for the last several months.  The technologies used are constantly in flux as I learn more and, hopefully, improve my knowledge in the area.
 
@@ -18,21 +18,27 @@ no longer works with localhost either.
 1.  Setting up the virtual environment:
 	
 	If you are using Mac OS X, type the following:
+	```
 	$ sudo easy_install virtualenv
+	```
 	If you are on linux, such as Ubuntu, type the following:
+	```
 	$ sudo apt-get install python-virtualenv
-
+	```
 	Now we need to construct our virtualenv.  Navigate to the top level 
 	directory of the repository and type the following:
+	```
 	$ virtualenv venv
-
+	```
 	To activate our new virtual environment type:
+	```
 	$ source venv/bin/activate
-
+	```
 	Now we need to install our application dependencies in our virtual
 	environment, this can be accomplished with the following command:
+	```
 	$ pip install Flask gunicorn flask-login flask-sqlalchemy sqlalchemy-migrate
-
+	```
 2.  Modifying configuration variables:
 	
 	It is currently assumed that all Spark cores will have the same access token
@@ -44,16 +50,20 @@ no longer works with localhost either.
 
 	You must also create a local database file to use.  Do this by typing the
 	following from the top level directory:
+	```
 	$ ./db_create.py
-
+	```
 4.  Running the web-app:
 	
 	In order to run the web-app we type:
+	```
 	$ foreman start
+	```
 	Currently, we most also run the worker script to update spark variables.
 	Make sure that you execute this command from within your virtual env.
+	```
 	$ python worker.py
-
+	```
 	If you open your browser and navigate to "localhost:5000" you should now see
 	the webpage.
 
